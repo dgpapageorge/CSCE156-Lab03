@@ -1,5 +1,6 @@
 package unl.cse;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,9 +32,10 @@ public class BaseballTests {
 	/**
 	 * Tests that the {@link Baseball#loadData()} method correctly 
 	 * loads and creates instances of the {@link Team} class.
+	 * @throws FileNotFoundException 
 	 */
 	@Test
-	public void teamFixedTest01() {
+	public void teamFixedTest01() throws FileNotFoundException {
 		List<Team> result = Baseball.loadData();
 		Assertions.assertEquals(EXPECTED, result);
 	}

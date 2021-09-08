@@ -55,8 +55,17 @@ public class DnaAnalysis {
 	 */
 	public static int countSubsequences(String subSequence) {
 
-		// TODO: implement
-		return 0;
+		String dna = loadDnaFromFile();
+		int count = 0;
+		for (int i = 0; i<dna.length()-subSequence.length()+1;i++)
+		{
+			
+			if (dna.substring(i,i+subSequence.length()).equals(subSequence))
+			{
+				count++;
+			}
+		}
+		return count;
 	}
 
 	public static void main(String args[]) {
