@@ -66,18 +66,22 @@ public class Baseball {
 		Collections.sort(teams, Team.teamByWinPercentage);
 
 		System.out.println("\n\nSorted Teams: ");
+		try {
+		PrintWriter pw = new PrintWriter("data/output.csv");
 		for (Team t : teams) {
 			System.out.println(t);
 			
-		try {
-			  PrintWriter pw = new PrintWriter("data/output.csv");
 			  pw.write(t.getName()+","+t.getWins()+","+t.getLoss());
-			  pw.close();
-			} catch (FileNotFoundException fnfe) {
+			  
+			}
+		pw.close();
+		}
+		catch (FileNotFoundException fnfe) {
 			  throw new RuntimeException(fnfe);
 			}
 		}
-
-	}
+	
 
 }
+
+
